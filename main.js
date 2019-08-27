@@ -139,15 +139,6 @@ async function main() {
     if (child.name.charAt(0) === '#' && child.visible !== false) {
       const child = canvas.children[i];
       figma.createComponent(child, images, componentMap);
-      // nextSection += `@Component({`;
-      // nextSection += `selector: 'my-app',
-      //         template: \``;
-      //         nextSection += `    <div class="master" [ngStyle]="{backgroundColor: '${figma.colorString(child.backgroundColor)}'}">\n`;
-      //         nextSection += `      <C${child.name.replace(/\W+/g, "")} {...this.props} nodeId="${child.id}" />\n`;
-      //         nextSection += "    </div>\n`";
-      //         nextSection += "})"
-      // nextSection += `export class Master${child.name.replace(/\W+/g, "")}  {\n`;
-      // nextSection += "}\n\n";
     }
   }
 
@@ -172,14 +163,7 @@ async function main() {
   nextSection += `  exports: [ ${components.join(', ')} ],\n`
   nextSection +=`})\n`;
   nextSection +=`export class FigmaModule { }`;
-  // contents += `export function getComponentFromId(id) {\n`;
-
-  // for (const key in componentMap) {
-  //   contents += `  if (id === "${key}") return ${componentMap[key].instance};\n`;
-  //   nextSection += componentMap[key].doc + "\n";
-  // }
-
-  // contents += "  return null;\n}\n\n";
+  
   contents += nextSection;
 
   const path = "./src/components/figma.module.ts";
