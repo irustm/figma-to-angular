@@ -8,7 +8,7 @@ in production. This is simply a proof of concept to show what possibilities exis
 
 We use 2 endpoints in this project:
 
-- `GET /v1/files/:file_key` - Get the JSON tree from a file. This is the main workhorse of this project and lays the skeleton of the React Components.
+- `GET /v1/files/:file_key` - Get the JSON tree from a file. This is the main workhorse of this project and lays the skeleton of the Angular Components.
 - `GET /v1/images/:file_key` - When we identify nodes that are vectors or other nodes that can't directly be represented by `div`s, we have to render them as svgs.
 
 ## Set up
@@ -20,7 +20,7 @@ We use 2 endpoints in this project:
 ## Usage
 
 By default this project comes with a prerendered component in `src/figmaComponents`. You can see a page that uses this component if you
-run `npm start`. This will start a React server and a webpage will open to the root page. This webpage will automatically refresh as
+run `npm start`. This will start a Angular server and a webpage will open to the root page. This webpage will automatically refresh as
 you make changes to the source documents. To follow along with the example component, the source Figma file is located [here](https://www.figma.com/file/VGULlnz44R0Ooe4FZKDxlhh4/Untitled).
 
 When we run the converter, we will convert any *top level frames* in the document to Angular Components *as long as their name starts with `#`*.
